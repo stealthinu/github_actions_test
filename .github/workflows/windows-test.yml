@@ -1,14 +1,14 @@
 name: learn-github-actions
-run-name: ${{ github.actor }} is learning GitHub Actions
+run-name: ${{ github.actor }} is testing GitHub Actions with Windows Server 2019
 on: [push]
 jobs:
-    check-bats-version:
-        runs-on: ubuntu-latest
+    test-bats-version:
+        runs-on: windows-latest
         steps:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
               with:
                   node-version: '14'
             - run: npm install -g bats
-            - name: Check bats version
+            - name: Check bats version on Windows Server 2019
               run: bats --version
